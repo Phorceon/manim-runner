@@ -1,4 +1,4 @@
-FROM python:3.11-slim
+FROM python:3.11-bullseye
 
 # Install system dependencies required by Manim
 RUN apt-get update && apt-get install -y \
@@ -6,10 +6,10 @@ RUN apt-get update && apt-get install -y \
     libcairo2 \
     libpango1.0-0 \
     libglib2.0-0 \
-    texlive \
+    texlive-latex-base \
     texlive-latex-extra \
-    texlive-fonts-extra \
-    texlive-latex-recommended \
+    texlive-fonts-recommended \
+    texlive-plain-generic \
     tipa \
     fonts-freefont-otf \
     && rm -rf /var/lib/apt/lists/*
